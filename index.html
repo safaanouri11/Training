@@ -9,19 +9,62 @@
 <body>
 
   <!-- Full-screen Hero Section -->
-  <header class="hero">
+  <header class="hero" id="top">
     <div class="overlay"></div>
 
     <!-- Navigation Bar -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main Navigation">
       <div class="logo">LA TAVOLA</div>
 
-      <ul class="nav-links">
-        <li><a href="#" class="active">Home <span class="arrow">▼</span></a></li>
-        <li><a href="#">Menus <span class="arrow">▼</span></a></li>
-        <li><a href="#">Pages <span class="arrow">▼</span></a></li>
-        <li><a href="#">Blog <span class="arrow">▼</span></a></li>
-        <li><a href="#">Shop <span class="arrow">▼</span></a></li>
+      <!-- IMPORTANT: added id="navLinks" so your script can find it if needed -->
+      <ul class="nav-links" id="navLinks">
+
+        <li class="nav-item">
+          <a href="#top" class="active">Home <span class="arrow">▼</span></a>
+          <ul class="dropdown">
+            <li><a href="#top">Home 1</a></li>
+            <li><a href="#top">Home 2</a></li>
+            <li><a href="#secondSection">Reservation</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <!-- IMPORTANT: changed href from # to #secondSection -->
+          <a href="#secondSection">Menus <span class="arrow">▼</span></a>
+          <ul class="dropdown">
+            <li><a href="#secondSection">Breakfast</a></li>
+            <li><a href="#secondSection">Lunch</a></li>
+            <li><a href="#secondSection">Dinner</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a href="#">Pages <span class="arrow">▼</span></a>
+          <ul class="dropdown">
+            <li><a href="#secondSection">About</a></li>
+            <li><a href="#secondSection">Chefs</a></li>
+            <li><a href="#secondSection">Gallery</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a href="#">Blog <span class="arrow">▼</span></a>
+          <ul class="dropdown">
+            <li><a href="#secondSection">Latest Posts</a></li>
+            <li><a href="#secondSection">Food Stories</a></li>
+            <li><a href="#secondSection">Events</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a href="#">Shop <span class="arrow">▼</span></a>
+          <ul class="dropdown">
+            <li><a href="#secondSection">Gift Cards</a></li>
+            <li><a href="#secondSection">Order Online</a></li>
+            <li><a href="#secondSection">Contact</a></li>
+          </ul>
+        </li>
+
       </ul>
     </nav>
 
@@ -35,9 +78,44 @@
         served in a warm and elegant atmosphere.
       </p>
 
-      <button class="btn" id="viewMenuBtn">View Menu</button>
+      <!-- IMPORTANT: this button now definitely scrolls to secondSection -->
+      <button class="btn" id="viewMenuBtn" type="button">View Menu</button>
     </div>
   </header>
+
+  <!-- Scroll Section (Second Page) -->
+  <section class="second-section" id="secondSection">
+    <div class="container">
+      <h2 class="h1">Discover Our Specialties</h2>
+      <h3 class="h2">Fresh ingredients. Elegant atmosphere. Unforgettable taste.</h3>
+
+      <div class="cards">
+        <article class="card">
+          <img src="images/card1.jpeg" alt="Signature Pasta">
+          <div class="card-body">
+            <h4>Signature Pasta</h4>
+            <p>Handmade pasta with rich sauce and a perfect balance of flavor.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/card2.jpeg" alt="Chef’s Steak">
+          <div class="card-body">
+            <h4>Chef’s Steak</h4>
+            <p>Juicy steak cooked to perfection, served with seasonal sides.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/card3.jpeg" alt="Classic Dessert">
+          <div class="card-body">
+            <h4>Classic Dessert</h4>
+            <p>A sweet finish with premium ingredients and a modern touch.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
   <script src="script.js"></script>
 </body>

@@ -1,146 +1,220 @@
-/* =========================
-   Base / Reset
-========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ===== Reset ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
 
-body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: #fff;
-  overflow: hidden; /* Desktop only (as required) */
-}
-
-/* =========================
-   Hero Section (Full Screen)
-========================= */
-.hero {
+/* ===== Hero ===== */
+.hero{
+  position: relative;
   height: 100vh;
-  width: 100%;
-  background-image: url("images/bg.jpg");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-/* Overlay improves text visibility */
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-}
-
-/* =========================
-   Navbar
-========================= */
-.navbar {
-  position: absolute;
-  top: 20px;
-  left: 0;
-  width: 100%;
-  padding: 0 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 2;
-}
-
-.logo {
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 28px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 600;
-  transition: 0.25s ease;
-}
-
-.nav-links a:hover {
-  color: #c59d5f;
-}
-
-.nav-links a.active {
-  color: #c59d5f;
-}
-
-.arrow {
-  font-size: 12px;
-  margin-left: 6px;
-  opacity: 0.9;
-}
-
-/* =========================
-   Center Content
-========================= */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  width: 100%;
+  background: url("images/bg.jpg") center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 20px;
 }
 
-.tagline {
-  font-size: 14px;
+.overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+/* ===== Navbar ===== */
+.navbar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+}
+
+.logo{
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.nav-links{
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.nav-item{ position: relative; }
+
+.nav-links a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.2s ease;
+}
+
+.nav-links a:hover{
+  text-decoration: underline; /* underline on hover */
+}
+
+.nav-links a.active{
+  text-decoration: underline;
+}
+
+.arrow{ font-size: 12px; opacity: 0.9; }
+
+/* ===== Dropdown ===== */
+.dropdown{
+  position: absolute;
+  top: 44px;
+  left: 0;
+  min-width: 180px;
+  list-style: none;
+  background: rgba(20,20,20,0.95);
+  border-radius: 10px;
+  padding: 10px 0;
+  display: none; /* hidden by default */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+.dropdown li a{
+  display: block;
+  padding: 10px 14px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dropdown li a:hover{
+  text-decoration: underline; /* underline dropdown item on hover */
+  background: rgba(255,255,255,0.06);
+}
+
+/* show dropdown on hover */
+.nav-item:hover .dropdown{
+  display: block;
+}
+
+/* ===== Hero Content ===== */
+.hero-content{
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  width: min(900px, 92%);
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.tagline{
   letter-spacing: 3px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
+  font-weight: 700;
+  opacity: 0.9;
   margin-bottom: 12px;
 }
 
-.title {
-  font-size: 72px;
+.title{
+  font-size: clamp(42px, 6vw, 70px);
   font-weight: 900;
-  letter-spacing: 2px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
-.desc {
-  width: 780px;
-  max-width: 90%;
-  font-size: 18px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.9);
+.desc{
+  max-width: 720px;
+  margin: 0 auto 18px;
+  line-height: 1.6;
+  font-size: 16px;
+  opacity: 0.95;
+}
+
+.btn{
+  border: 0;
+  padding: 12px 22px;
+  border-radius: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  background: #e7b066;
+  color: #1b1b1b;
+  transition: 0.2s ease;
+}
+.btn:hover{ transform: translateY(-1px); }
+
+/* ===== Second Section ===== */
+.second-section{
+  background: #fff; /* white background as required */
+  padding: 70px 0;
+}
+
+.container{
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.h1{
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.h2{
+  text-align: center;
+  font-weight: 600;
+  color: #555;
   margin-bottom: 32px;
 }
 
-/* =========================
-   Button
-========================= */
-.btn {
-  padding: 14px 36px;
-  border: none;
-  border-radius: 8px;
-  background: #c59d5f;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: transform 0.25s ease, background 0.25s ease;
+/* cards row */
+.cards{
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
-.btn:hover {
-  background: #b28a4c;
-  transform: scale(1.05);
+.card{
+  flex: 1;
+  background: #fafafa;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.10);
+  transition: 0.25s ease;
+}
+
+.card:hover{
+  transform: translateY(-4px);
+}
+
+.card img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;  /* prevents giant image overflow */
+  display: block;
+}
+
+.card-body{
+  padding: 16px;
+}
+
+.card-body h4{
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.card-body p{
+  color: #555;
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+/* optional responsiveness (makes it look great on phones too) */
+@media (max-width: 900px){
+  .cards{ flex-direction: column; }
+  .card img{ height: 200px; }
+  .navbar{ padding: 16px 18px; }
+  .nav-links{ gap: 10px; }
 }
