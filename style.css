@@ -19,6 +19,7 @@ body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-seri
 }
 
 /* ===== Navbar ===== */
+/* ===== Navbar ===== */
 .navbar{
   position: absolute;
   top: 0;
@@ -26,12 +27,15 @@ body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-seri
   width: 100%;
   padding: 18px 40px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;   
   align-items: center;
   z-index: 5;
 }
 
+
 .logo{
+  position: absolute;
+  left: 40px;
   color: #fff;
   font-weight: 800;
   letter-spacing: 2px;
@@ -57,11 +61,18 @@ body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-seri
   transition: 0.2s ease;
 }
 
+
 .nav-links a:hover{
-  text-decoration: underline; /* underline on hover */
+  text-decoration: underline;
 }
 
+
 .nav-links a.active{
+  text-decoration: none;
+}
+
+
+.nav-links a.active:hover{
   text-decoration: underline;
 }
 
@@ -90,8 +101,8 @@ body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-seri
 }
 
 .dropdown li a:hover{
-  text-decoration: underline; /* underline dropdown item on hover */
-  background: rgba(255,255,255,0.06);
+  text-decoration: underline;
+  background: transparent;    
 }
 
 /* show dropdown on hover */
