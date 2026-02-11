@@ -1,14 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   // ===== View Menu Button =====
-  const viewMenuBtn = document.getElementById("viewMenuBtn");
-  const menusSection = document.getElementById("menus");
+ const viewMenuBtn = document.getElementById("viewMenuBtn");
 
-  if (viewMenuBtn && menusSection) {
-    viewMenuBtn.addEventListener("click", () => {
-      menusSection.scrollIntoView({ behavior: "smooth" });
-    });
-  }
+if (viewMenuBtn) {
+  viewMenuBtn.addEventListener("click", () => {
+    window.location.href = "menu.html";
+  });
+}
 
   // ===== Mobile Menu Toggle =====
   const menuBtn = document.getElementById("menuBtn");

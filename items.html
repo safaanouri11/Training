@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>La Tavola | Items</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Fixed Header -->
+  <header class="menu-header">
+    <nav class="navbar" aria-label="Main Navigation">
+      <div class="logo">LA TAVOLA</div>
+
+      <ul class="nav-links" id="navLinks">
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="menu.html" class="active">Menus</a></li>
+      </ul>
+
+      <!-- Cart Icon (Top-right) -->
+      <a class="cart-icon" href="order.html" aria-label="Go to order">
+        🛒
+        <span class="cart-badge" id="cartBadge">0</span>
+      </a>
+    </nav>
+  </header>
+
+   <main class="items-page" id="itemsPage"> 
+       <section class="items-title">
+      <h1 id="pageTitle">Items</h1>
+      <p id="pageSubtitle">Choose items and add them to your order.</p>
+    </section>
+
+    <section class="items-grid" id="itemsGrid">
+      <!-- Cards injected by items.js -->
+    </section>
+  </main>
+
+  <script src="js/items.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>La Tavola | Order</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Fixed Header -->
+  <header class="menu-header">
+    <nav class="navbar" aria-label="Main Navigation">
+      <div class="logo">LA TAVOLA</div>
+
+      <ul class="nav-links" id="navLinks">
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="menu.html">Menus</a></li>
+      </ul>
+
+      <!-- Cart Icon -->
+      <a class="cart-icon" href="order.html" aria-label="Go to order">
+        🛒
+        <span class="cart-badge" id="cartBadge">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="order-page" id="orderPage">
+    <section class="order-title">
+      <h1>Your Order</h1>
+      <p>Review items, update quantities, then place your order.</p>
+    </section>
+
+    <!-- Empty State -->
+    <section class="order-empty" id="emptyState">
+      <p>No items to order</p>
+    </section>
+
+    <!-- Order List -->
+    <section class="order-list" id="orderList">
+      <!-- rows injected by JS -->
+    </section>
+
+    <!-- Summary -->
+    <section class="order-summary" id="orderSummary">
+      <div class="summary-left">
+        <span>Total:</span>
+        <strong id="totalPrice">$0.00</strong>
+      </div>
+
+      <div class="summary-right">
+        <button class="btn-primary" id="orderNowBtn" type="button">Order Now</button>
+        <button class="btn-danger" id="emptyBtn" type="button">Empty</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h3 id="modalTitle">Title</h3>
+      <p id="modalMessage">Message</p>
+
+      <div class="modal-actions" id="modalActions">
+        <!-- buttons injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/order.js"></script>
+</body>
+</html>
